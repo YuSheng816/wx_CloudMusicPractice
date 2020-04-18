@@ -1,0 +1,11 @@
+<!--pages/index/index.wxml-->
+
+<!--搜索框-->
+<view>
+	<view class="search" bindtap="gotoSearch">
+		<view class="search-input">
+			<icon type="search" size="20" color="#aaa"></icon>
+			<input type="text" placeholder="搜索歌曲" disabled="true"></input>
+		</view>
+	</view>
+</view>

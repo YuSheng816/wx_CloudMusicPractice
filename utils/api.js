@@ -1,0 +1,1 @@
+module.exports = "https://netease.lzcdev.xyz/"
