@@ -14,9 +14,10 @@ Page({
 
   //打开排行榜
   openRanklingList: function (e) {
+    //console.log(e);
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../songSheet/songSheet?id=' + id + "&type=1",
+      url: '../songSheet/songSheet?id=' + id,
     })
   },
 

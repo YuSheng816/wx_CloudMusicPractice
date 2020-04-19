@@ -26,7 +26,7 @@
 		</view>
 		<view class="officialList_desc">
 			<view class="" wx:for="{{item.tracks}}" wx:for-item="item2" wx:for-index="index2" wx:key="{{index2}}">
-				<text>{{index2+1}}.{{item2.first}}-{{item2.second}}</text>
+				<text>{{index2+1}}.{{item2.first}} - {{item2.second}}</text>
 			</view>
 		</view>
 	</view>

@@ -1,51 +1,18 @@
-var baseUrl = require('../../utils/api.js');
-
+// template/loading/loading.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 歌单详情数据
-    playInfo: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let id = options.id;
-    //console.log(id);
-    if (id == 3779629)
-      id = 0;
-    if (id == 3778678)
-      id = 1;
-    if (id == 2884035)
-      id = 2;
-    if (id == 19723756)
-      id = 3;
-    this.getTopList(id);
-  },
 
-  /**
-   * 获取排行榜数据
-   */
-  getTopList(id) {
-    let that = this;
-    wx.request({
-      url: baseUrl + 'top/list?idx=' + id,
-      header: {
-        'Content-Type': 'application/json'
-      },
-      success:function(res){
-        console.log(res);
-        if(res.data.code == 200){
-          that.setData({
-            playInfo:res.data.playlist
-          })
-        }
-      }
-    })
   },
 
   /**

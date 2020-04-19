@@ -1,4 +1,5 @@
 /* pages/index/index.wxss */
+
 .search{
   width: 90%;
   height: auto;
@@ -72,11 +73,11 @@
   width: 65%;
   margin-left: 20rpx;
   margin-bottom: 40rpx;
-  line-height: 70rpx;
+  line-height: 65rpx;
 }
 
 .officialList_desc text{
-  font-size: 30rpx;
+  font-size: 24rpx;
   color: rgb(99, 97, 95);
   overflow: hidden;
   text-overflow: ellipsis;
