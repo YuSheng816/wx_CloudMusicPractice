@@ -9,3 +9,25 @@
 		</view>
 	</view>
 </view>
+
+<!--热搜榜-->
+<view class="officialList">
+	<view class="official_title">
+			<text>官方榜</text>
+	</view>
+	<view class="officialList_wrap" wx:for="{{officialList}}" wx:key="{{index}}" data-name="{{item.name}}" data-id="{{item.id}}" bindtap="openRanklingList">
+		<view class="officialList_img">
+			<image mode="widthFix" src="{{item.coverImgUrl}}"></image>
+			<view class="officialList_info">
+				<view class="officialList_wrap">
+					<text>{{item.updateFrequency}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="officialList_desc">
+			<view class="" wx:for="{{item.tracks}}" wx:for-item="item2" wx:for-index="index2" wx:key="{{index2}}">
+				<text>{{index2+1}}.{{item2.first}}-{{item2.second}}</text>
+			</view>
+		</view>
+	</view>
+</view>

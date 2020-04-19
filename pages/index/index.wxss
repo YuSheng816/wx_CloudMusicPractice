@@ -28,3 +28,57 @@
   align-items: center;
   margin-left: 15rpx;
 }
+
+.officialList{
+  margin-left: 30rpx;
+}
+
+.official_title{
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.official_title text{
+  font-size: 35rpx;
+  font-weight: bolder;
+}
+
+.officialList_wrap{
+  display: flex;
+  align-items: center;
+}
+
+.officialList_img{
+  width: 30%;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.officialList_img image{
+  width: 100%;
+  border-radius: 15rpx;
+}
+
+.officialList_img .officialList_info{
+  position: absolute;
+  width: 100%;
+  left: 10rpx;
+  bottom: 20rpx;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.officialList_desc{
+  width: 65%;
+  margin-left: 20rpx;
+  margin-bottom: 40rpx;
+  line-height: 70rpx;
+}
+
+.officialList_desc text{
+  font-size: 30rpx;
+  color: rgb(99, 97, 95);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

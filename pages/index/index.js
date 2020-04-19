@@ -8,9 +8,48 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //官方榜
+    officialList: []
   },
 
-  gotoSearch:function(){
+  //打开排行榜
+  openRanklingList: function (e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../songSheet/songSheet?id=' + id + "&type=1",
+    })
+  },
+
+  /**
+   * 榜单内容摘要
+   */
+  getToplistDetail() {
+    var that = this;
+    wx.request({
+      url: baseUrl + 'toplist/detail',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        if (res.data.code == 200) {
+          //console.log(res);
+          var list = res.data.list;
+          //console.log(list);
+          var officialList = [];
+          for (var index in list) {
+            var name = list[index].name;
+            if (name == "云音乐飙升榜" || name == "云音乐新歌榜" || name == "网易原创歌曲榜" || name == "云音乐热歌榜")
+              officialList.push(list[index]);
+          }
+          that.setData({
+            officialList
+          })
+        }
+      }
+    })
+  },
+
+  gotoSearch: function () {
     wx.navigateTo({
       url: '../search/search',
     })
@@ -19,7 +58,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getToplistDetail();
   },
 
   /**
