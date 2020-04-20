@@ -7,7 +7,9 @@ Page({
    */
   data: {
     // 歌单详情数据
-    playInfo: []
+    playInfo: [],
+    privileges: [],
+    loading: true
   },
 
   /**
@@ -37,16 +39,31 @@ Page({
       header: {
         'Content-Type': 'application/json'
       },
-      success:function(res){
+      success: function (res) {
         console.log(res);
-        if(res.data.code == 200){
+        if (res.data.code == 200) {
           that.setData({
-            playInfo:res.data.playlist
+            playInfo: res.data.playlist,
+            privileges: res.data.privileges,
+            loading: false
           })
         }
       }
     })
   },
+
+  /**
+   * 播放音乐
+   */
+  playMusic:function(e){
+    var that = this;
+    var audioId = e.currentTarget.dataset.id;
+    //console.log(audioId);
+    wx.navigateTo({
+      url: '../player/player?id'+audioId
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

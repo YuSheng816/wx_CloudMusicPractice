@@ -30,5 +30,41 @@
 		</view>
 	</view>
 
-  
+	<!--歌曲列表-->
+	<view class="songList_wrap">
+
+		<view class="songList_wrap_title">
+			<view id="play" class="iconfont icon-bofang" style="font-size:50rpx;color:#333333"></view>
+			<view class="play2" bindtap="playMusic" data-id="{{playInfo.trackers[0].id}}" data-index="{{0}}">
+				<text>播放全部</text>
+				<text class="songCount">(共{{playInfo.trackCount}}首)</text>
+			</view>
+		</view>
+	</view>
+
+	<template wx:if="{{loading}}" is="loading"></template>
+
+	<view class="songArray_wrap" wx:for="{{playInfo.tracks}}" wx:key="{{index}}">
+		<view class="songArray_index">{{index+1}}</view>
+		<view class="songArray_content" bindtap="playMusic" data-id="{{item.id}}" data-index="{{index}}">
+			<view class="content_1">
+				{{item.name}}
+				<font>{{item.alia[0]==null?"":'('+item.alia[0]+')'}}</font>
+
+			</view>
+			<view class="content_3">
+				<text wx:if="{{privileges[index].maxbr === 999000}}" class="iconfont icon-sq" style="color:red;"></text>
+				{{item.ar[0].name}}-{{item.al.name}}
+			</view>
+		</view>
+		<view class="songArray_mv">
+			<view wx:if="{{item.mv!==0}}">
+				<view id="songArray_mv" class="iconfont icon-Youtube" data-id="{{item.mv}}"></view>
+			</view>
+			<view wx:else>
+				<view id="songArray_mv" class="iconfont icon-Youtube" style="color:white;"></view>
+			</view>
+		</view>
+		<view id="songArray_other" class="iconfont icon-caidan2" style="color:#CCCCCC;"></view>
+	</view>
 </view>
