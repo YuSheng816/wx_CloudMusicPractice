@@ -1,4 +1,7 @@
 var baseUrl = require('../../utils/api.js');
+var common = require("../../utils/util.js");
+var WxNotificationCenter = require("../../utils/WxNotificationCenter.js")
+const app = getApp();
 
 Page({
 
@@ -9,6 +12,8 @@ Page({
     // 歌单详情数据
     playInfo: [],
     privileges: [],
+    music:{},
+    playing:false,
     loading: true
   },
 
@@ -27,6 +32,10 @@ Page({
     if (id == 19723756)
       id = 3;
     this.getTopList(id);
+    this.setData({
+      music: app.globalData.curPlaying,
+      playing: app.globalData.playing,
+    });
   },
 
   /**
@@ -40,7 +49,7 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function (res) {
-        console.log(res);
+        //console.log(res);
         if (res.data.code == 200) {
           that.setData({
             playInfo: res.data.playlist,
@@ -58,9 +67,13 @@ Page({
   playMusic:function(e){
     var that = this;
     var audioId = e.currentTarget.dataset.id;
-    //console.log(audioId);
+    const index = e.currentTarget.dataset.index;
+    let playlist = this.data.playInfo.tracks;
+
+    app.globalData.list_song = playlist;
+    app.globalData.index_song = index;
     wx.navigateTo({
-      url: '../player/player?id'+audioId
+      url: '../player/player?id='+audioId
     })
   },
 
@@ -76,7 +89,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // 处理播放栏
+        WxNotificationCenter.addNotification("music", (res) => {
+            this.setData({
+                music: res.curPlaying,
+                playing: res.playing,
+                isShow: res.list_song.length
+            });
+        }, this);
   },
 
   /**

@@ -1,9 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/player/player",
     "pages/search/search",
     "pages/songSheet/songSheet",
-    "pages/player/player"
+    "components/drawer/drawer"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
   ],
   "window": {
     "backgroundTextStyle": "light",

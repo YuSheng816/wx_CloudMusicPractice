@@ -35,7 +35,7 @@
 
 		<view class="songList_wrap_title">
 			<view id="play" class="iconfont icon-bofang" style="font-size:50rpx;color:#333333"></view>
-			<view class="play2" bindtap="playMusic" data-id="{{playInfo.trackers[0].id}}" data-index="{{0}}">
+			<view class="play2" bindtap="playMusic" data-id="{{playInfo.tracks[0].id}}" data-index="0">
 				<text>播放全部</text>
 				<text class="songCount">(共{{playInfo.trackCount}}首)</text>
 			</view>
