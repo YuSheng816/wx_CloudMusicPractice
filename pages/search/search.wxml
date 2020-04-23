@@ -1,2 +1,39 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+
+<!--搜索框-->
+<view class="search">
+	<view class="search-input">
+		<icon type="search" size="20" color="#aaa"></icon>
+		<input type="text" placeholder="搜索歌曲" bindconfirm="gotoSearch"></input>
+	</view>
+</view>
+
+<!--搜索结果-->
+<view class="searchAll" wx:if="{{showResult}}">
+	<view class="search_content">
+		<swiper class="swiper">
+			<swiper-item class="swiper-item">
+				<scroll-view scroll-y="true" bindscrolltolower="loadMore" style="height:100%">
+					<template wx:If="{{singleloading}}" is="loading"></template>
+					<view class="songArray_wrap" wx:for="{{singleList}}" wx:key="{{index}}">
+						<view class="songArray_index">{{index+1}}</view>
+						<view class="songArray_content" bindtap="playMusic" data-id="{{item.id}}" data-index="{{index}}">
+							<view class="content_1">{{item.name}}</view>
+							<view class="content_2">{{item.ar[0].name}}-{{item.al.name}}</view>
+						</view>
+						<view class="songArray_mv">
+							<view wx:if="{{item.mvid!==0}}">
+								<view id="songArray_mv" class="iconfont icon-Youtube"></view>
+							</view>
+							<view wx:else>
+								<view id="songArray_mv" class="iconfont icon-Youtube" style="color:white;"></view>
+							</view>
+						</view>
+						<view id="songArray_other" class="iconfont icon-caidan2" style="color:#CCCCCC;"></view>
+					</view>
+					<template wx:if="{{singleloadingmore}}" is="loading" />
+				</scroll-view>
+			</swiper-item>
+		</swiper>
+	</view>
+</view>
