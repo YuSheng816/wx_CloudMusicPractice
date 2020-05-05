@@ -25,6 +25,7 @@ Page({
   //搜索事件
   gotoSearch: function (e) {
     //输入框值
+    console.log(e);
     var searchValue = e.detail.value;
     const that = this;
     that.setData({
@@ -50,6 +51,7 @@ Page({
             }]
           }
           that.setData({
+            showView: false,
             showResult: true,
             singleList: songs,
             singlePage: 2,
@@ -60,10 +62,27 @@ Page({
     })
   },
 
+  playMusic: function (e) {
+    var that = this;
+    console.log(e);
+    var audioId = e.currentTarget.dataset.id;
+    const index = e.currentTarget.dataset.index;
+
+    let playList = this.data.singleList;
+    app.globalData.list_song = playList;
+    app.globalData.index_song = index;
+    wx.navigateTo({
+      url: '../player/player?id=' + audioId,
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -76,7 +95,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**

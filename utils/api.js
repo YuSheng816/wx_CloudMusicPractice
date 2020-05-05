@@ -1,1 +1,1 @@
-module.exports = "https://netease.lzcdev.xyz/"
+module.exports = "http://localhost:3000/"
