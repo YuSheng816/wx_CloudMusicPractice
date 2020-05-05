@@ -16,5 +16,5 @@
 
 <image width="340" src="https://github.com/YuSheng816/wx_CloudMusicPractice/blob/master/images/search.jpg"/>
 
-<image width="340" src="https://github.com/YuSheng816/wx_CloudMusicPractice/blob/master/images/player.jpg"/>
+<image width="340" src="https://github.com/YuSheng816/wx_CloudMusicPractice/blob/master/images/player.png"/>
 
