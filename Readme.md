@@ -10,11 +10,11 @@
 3. 官方榜单
 
 ### 截图
-<image src="https://github.com/YuSheng816/wx_CloudMusicPractice/tree/master/images/index.jpg"/>
+<image width="340" src="https://github.com/YuSheng816/wx_CloudMusicPractice/blob/master/images/index.jpg"/>
 
-<image src="https://github.com/YuSheng816/wx_CloudMusicPractice/tree/master/images/songSheet.jpg"/>
+<image width="340" src="https://github.com/YuSheng816/wx_CloudMusicPractice/blob/master/images/songSheet.jpg"/>
 
-<image src="https://github.com/YuSheng816/wx_CloudMusicPractice/tree/master/images/search.jpg"/>
+<image width="340" src="https://github.com/YuSheng816/wx_CloudMusicPractice/blob/master/images/search.jpg"/>
 
-<image src="https://github.com/YuSheng816/wx_CloudMusicPractice/tree/master/images/player.jpg"/>
+<image width="340" src="https://github.com/YuSheng816/wx_CloudMusicPractice/blob/master/images/player.jpg"/>
 
