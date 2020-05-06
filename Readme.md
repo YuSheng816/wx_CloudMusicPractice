@@ -1,7 +1,7 @@
 # 简单网易云音乐
 
 需后端支持
-下载启动[node服务端](https://github.com/sqaiyan/netmusic-node)即可
+下载启动[node服务端](https://github.com/Binaryify/NeteaseCloudMusicApi)即可
 
 从[大佬](https://github.com/sqaiyan/NeteaseMusicWxMiniApp)处学习
 ### 目前功能
